@@ -9,6 +9,7 @@ class Profile extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Profile';
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()

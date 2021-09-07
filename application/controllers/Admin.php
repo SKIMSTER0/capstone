@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Admin Profile';
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()

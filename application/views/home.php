@@ -1,5 +1,7 @@
 
 <h2>PCO TRAINER</h2>
+
+<div id="game"></div>
 <p> game statistics (time, #PCO) </p>
 <p> live game </p>
 <p> upcoming piece 1</p>

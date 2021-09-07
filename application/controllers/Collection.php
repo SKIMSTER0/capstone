@@ -9,8 +9,7 @@ class Collection extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'PCO Collection';
-        //$this->TPL['loggedin'] = false;
-        //$this->TPL['active'] = array('home' => false);
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()

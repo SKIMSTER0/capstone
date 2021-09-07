@@ -9,6 +9,7 @@ class Login extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Login Page';
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()

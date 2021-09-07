@@ -9,6 +9,7 @@ class Leaderboard extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Leaderboards';
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()

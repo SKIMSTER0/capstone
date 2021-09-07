@@ -9,6 +9,7 @@ class Register extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Register';
+        $this->TPL['jsToLoad'] = array();
     }
 
 	public function index()
