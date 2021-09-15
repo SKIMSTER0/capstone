@@ -10,6 +10,9 @@ class Register extends CI_Controller {
         parent::__construct();
         $this->TPL['title'] = 'Register';
         $this->TPL['jsToLoad'] = array();
+        $this->TPL['error'] = '';
+
+        $this->load->model('access_model', 'access');
     }
 
 	public function index()
@@ -19,10 +22,12 @@ class Register extends CI_Controller {
 
     public function registerUser()
     {
-        $this->TPL['msg'] =
-            $this->userauth->register($this->input->post('username'),
-                                   $this->input->post('password'));
+        $this->userauth->register(
+            $this->input->post('username'),
+            $this->input->post('password'));
+        $this->TPL['error'] = $this->userauth->get_error_message();
 
+        //if ($this->access->)
         $this->template->show('register', $this->TPL);
     }
 

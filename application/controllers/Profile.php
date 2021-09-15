@@ -14,6 +14,8 @@ class Profile extends CI_Controller {
 
 	public function index()
 	{
+        //if not logged in, deny access
+        if ($this->session->)
         $this->template->show('profile', $this->TPL);
 	}
 

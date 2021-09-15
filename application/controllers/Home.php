@@ -9,7 +9,7 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->TPL['title'] = 'Home';
-        $this->TPL['jsToLoad'] = array('config.js', 'main.js', 'board.js');
+        $this->TPL['jsToLoad'] = array('config.js', 'game.js', 'board.js', 'player.js', 'index.js');
     }
 
 	public function index()

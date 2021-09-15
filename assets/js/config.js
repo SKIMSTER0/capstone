@@ -1,21 +1,27 @@
 const COLS = 10;
 const ROWS = 20;
-const BOARD_SCALE_X = 20;
-const BOARD_SCALE_Y = 20;
 const BLOCK_SIZE = 20;
-const COLORS = {
-    1: 'cyan',
-    2: 'blue',
-    3: 'orange',
-    4 : 'yellow',
-    5: 'green',
-    6: 'purple',
-    7: 'red',
+const BOARD_SCALE = {
+    x : 1,
+    y : 1,
+}
+
+const PIECE_COLORS = {
+    0: '#000000',
+    1: '#00FFFF',
+    2: '#0000FF',
+    3: '#FF6600',
+    4: '#FFFF00',
+    5: '#00FF00',
+    6: '#6600FF',
+    7: '#FF0000',
+    8: '#808080',
 };
 
 //tetris pieces, in alphabetical order: I J L O S T Z
 // _ represents empty square, X represents filled square
-const PIECE_LETTER = {
+const PIECES = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+const PIECE_VALUE = {
     _ : 0,
     I : 1,
     J : 2,
@@ -26,7 +32,7 @@ const PIECE_LETTER = {
     Z : 7,
     X : 8,
 }
-const PIECES = {
+const PIECES_DATA = {
     I : [
         [0,0,0,0,0],
         [0,0,0,0,0],
@@ -45,8 +51,9 @@ const PIECES = {
         [0,0,0],
     ],
     O : [
-        [4,4],
-        [4,4],
+        [0,4,4],
+        [0,4,4],
+        [0,0,0],
     ],
     S : [
         [0,5,5],
@@ -67,43 +74,38 @@ const PIECES = {
 
 // SRS piece kicks offsets
 const OFFSET = {
-    "O": {
-        0: [ {x:0, y:0} ],
-        1: [ {x:0, y:1} ],
-        2: [ {x:-1, y:1} ],
-        3: [ {x:-1, y:0} ]
+    "O" : {
+        0 : [ {x:0, y:0} ],
+        90 : [ {x:0, y:1} ],
+        180 : [ {x:-1, y:1} ],
+        270 : [ {x:-1, y:0} ]
     },
-    "I": {
-        0: [ {x:0, y:0}, {x:-1, y:0}, {x:2, y:0}, {x:-1, y:0}, {x:2, y:0} ],
-        1: [ {x:-1, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:-1}, {x:0, y:2}, ],
-        2: [ {x:-1, y:-1}, {x:1, y:-1}, {x:-2, y:-1}, {x:1, y:0}, {x:-2, y:0} ],
-        3: [ {x:0, y:-1}, {x:0, y:-1}, {x:0, y:-1}, {x:0, y:1}, {x:0, y:-2} ]
+    "I" : {
+        0 : [ {x:0, y:0}, {x:-1, y:0}, {x:2, y:0}, {x:-1, y:0}, {x:2, y:0} ],
+        90 : [ {x:-1, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:-1}, {x:0, y:2}, ],
+        180 : [ {x:-1, y:-1}, {x:1, y:-1}, {x:-2, y:-1}, {x:1, y:0}, {x:-2, y:0} ],
+        270 : [ {x:0, y:-1}, {x:0, y:-1}, {x:0, y:-1}, {x:0, y:1}, {x:0, y:-2} ]
     },
-    default: {
-        0: [ {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0} ],
-        1: [ {x:0, y:0}, {x:1, y:0}, {x:1, y:+1}, {x:0, y:-2}, {x:1, y:-2}, ],
-        2: [ {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0} ],
-        3: [ {x:0, y:0}, {x:-1, y:0}, {x:-1, y:+1}, {x:0, y:-2}, {x:-1, y:-2} ],
+    default : {
+        0 : [ {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0} ],
+        90 : [ {x:0, y:0}, {x:1, y:0}, {x:1, y:+1}, {x:0, y:-2}, {x:1, y:-2}, ],
+        180 : [ {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0}, {x:0, y:0} ],
+        270 : [ {x:0, y:0}, {x:-1, y:0}, {x:-1, y:+1}, {x:0, y:-2}, {x:-1, y:-2} ],
     }
 }
 
 const ROTATION_DIRECTION = {
     "CW" : 90,
-    "CCW" : -90,
     "FLIP" : 180,
-}
-const ROTATION_STATE = {
-    0 : 0,
-    1 : 90,
-    2 : 180,
-    3 : 270,
+    "CCW" : 270,
 }
 
-const INPUT_KEYS = {
+const KEY_SETTINGS = {
     "left" : "ArrowLeft",
     "right" : "ArrowRight",
     "rotateCW" : "KeyX",
     "rotateCCW" : "KeyZ",
+    "rotateFlip" : "KeyC",
     "softDrop" : "ArrowDown",
     "hardDrop" : "ArrowUp",
     "hold" : "Space",
@@ -112,4 +114,10 @@ const INPUT_KEYS = {
 const SCORING = {
     "PC" : 1000,
     "SOFT_DROP" : 10,
+    "HARD_DROP" : 50,
+    "LINE_CLEAR": 100,
 }
+
+const FPS = 60;
+const GRAVITY_TIME = 1000;
+const LOCK_DELAY_TIME = 1000;
