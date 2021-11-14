@@ -1,7 +1,7 @@
 class Player {
     constructor(game) {
         this.game = game;
-        this.board = game.board;
+        this.board = this.game.board;
         this.position = {
             x: null,
             y: null,
@@ -17,6 +17,10 @@ class Player {
         this.holdable = true;
         this.heldPiece = null;
         this.rotation = 0;
+        this.gameOver = false;
+        this.pcoHelper = Array(0);
+        this.pieceNum = 0;
+
         this.setRotation = (rotation) => {
             this.rotation += rotation;
             if (this.rotation >= 360) this.rotation %= 360;
@@ -29,18 +33,16 @@ class Player {
                 return OFFSET.default[direction];
             }
         }
-        //add seed generation
-
         //initialize bag/forecast/upcoming pieces
         this.forecast = "";
         this.generateBag();
         this.nextPiece();
 
-        this.score = 0;
-    }
+        //initialize first PCO
+        this.game.setOpener(this.pcoHelper[0].piecesPCO, this.pcoHelper[0].openerData);
 
-    setScore(score) {
-        this.score = score;
+        this.pcoCount = 0;
+        this.score = 0;
     }
 
     // === INPUT OPTIONS ===
@@ -62,7 +64,7 @@ class Player {
         }
 
         //set new position
-        this.position.x += direction.x;
+        this.position.x += direction.x
         this.position.y += direction.y;
         this.drawPiece();
 
@@ -110,7 +112,7 @@ class Player {
 
         this.rotatePiece(rotation);
 
-        console.log("TEST");
+        console.log("TEST OFFSET");
         console.log(currentOffsetData);
         for (let i = 0; i < currentOffsetData.length; i++){
             const currentOffset = currentOffsetData[i];
@@ -137,9 +139,9 @@ class Player {
         console.log("OFFSET FAILED");
         this.position = oldPosition;
         this.rotatePiece(360 - rotation);
-
     }
 
+    //drops piece down a single square
     softDrop(gravity) {
         this.move(0, 1);
 
@@ -148,6 +150,7 @@ class Player {
         }
     }
 
+    //drops piece all the way down until collision
     hardDrop() {
         let playerDropped = {
             x: this.position.x,
@@ -160,20 +163,8 @@ class Player {
         this.nextPiece();
     }
 
-    hold() {
-        //if player able to hold
-        if (this.holdable) {
-            //player will not be able to hold next turn/piece
-            this.holdable = false;
-
-            //if piece in hold spot, swap and reset
-            if (this.heldPiece != null) {
-                [this.piece, this.heldPiece] = [this.heldPiece, this.piece];
-            }
-        }
-    }
-
     // === PIECE OPTIONS ===
+    //given raw piece letter, return piece data and its corresponding offset
     generatePiece(piece) {
         switch (piece) {
             case piece.I:
@@ -213,34 +204,24 @@ class Player {
         }
     }
 
+    //choose a random PCO from the PCO database, add to forecast
     generateBag() {
-        const randomizedBag = this.shuffle(PIECES).join('');
-        this.forecast = this.forecast.concat(randomizedBag);
-    }
+            //let randNum = Math.floor(Math.random() * (openers.length));
+            let randNum = 5;
+            let piecesPCO = openers[randNum]["pieces"];
+            let openerData = openers[randNum]["opener_data"];
 
-    shuffle(forecast) {
-        let index = forecast.length, temp, rand;
-
-        //swap around random elements in array while elements to shuffle
-        while (index !== 0) {
-            rand = Math.random() * index | 0;
-            index -= 1;
-
-            temp = forecast[index];
-            forecast[index] = forecast[rand];
-            forecast[rand] = temp;
-        }
-
-        return forecast;
+            this.pcoHelper.push({piecesPCO, openerData});
+            this.forecast = this.forecast.concat(piecesPCO);
     }
 
     nextPiece() {
         //pop the front part of the forecast
         this.piece = this.forecast.charAt(0);
         this.forecast = this.forecast.substring(1, this.forecast.length);
-        console.log(this.forecast);
         this.pieceData = PIECES_DATA[this.piece];
 
+        //determine position of spawn piece
         this.pieceOrigin.x = Math.floor(this.pieceData.length / 2)
         this.pieceOrigin.y = Math.floor(this.pieceData[0].length / 2)
         this.position = {
@@ -249,8 +230,24 @@ class Player {
         }
 
         //check any line clears
-        let lineClears = this.game.lineClear();
+        let lineClears = this.game.lineClearCheck();
         this.score += lineClears * SCORING.LINE_CLEAR;
+
+        //check if empty board
+        if (this.game.checkPC()){
+            this.score += SCORING.PC;
+            this.pcoCount++;
+
+            this.game.setOpener(null, null);
+            this.game.drawOpener();
+
+            //check if PCO clear
+            if (lineClears > 0) {
+                //set next PCO helper guidelines
+                this.pcoHelper.pop();
+                this.game.setOpener(this.pcoHelper[0].piecesPCO, this.pcoHelper[0].openerData);
+            }
+        }
 
         //refresh pieces in forecast list if array gets small enough
         if (this.forecast.length < 7) {
@@ -259,30 +256,21 @@ class Player {
 
         //player will be able to hold next turn
         this.holdable = true;
+        this.pieceNum++;
 
-        //place piece on board, if false then spawn piece overlap board and then game over
-        this.spawnPiece();
-    }
-
-
-    spawnPiece() {
-        //check if spawn position colliding with board
-        if (this.game.collide(this.position, this.pieceData, this.pieceOrigin)){
-            //this.gameOver
+        //game over check (if collision upon spawn or any piece above 4 bottom lines means PCO impossible)
+        //if (this.game.collide(this.position, this.pieceData, this.pieceOrigin)){
+        if (this.game.checkPCFail()){
+            this.gameOver = true;
         } else {
             this.drawPiece();
         }
     }
 
-    updateGravity() {
-        //this.softDrop(true);
-    }
-
-    //refresh old position
+    //refresh player position
     refreshPlayer() {
         for (let pieceDataY = 0; pieceDataY < this.pieceData.length; pieceDataY++) {
             for (let pieceDataX = 0; pieceDataX < this.pieceData[0].length; pieceDataX++) {
-                //refresh current position
                 if (this.pieceData[pieceDataY][pieceDataX] === 0) continue;
                 this.board[pieceDataY + this.position.y - this.pieceOrigin.y][pieceDataX + this.position.x - this.pieceOrigin.x] = 0;
             }
@@ -294,24 +282,8 @@ class Player {
             for (let pieceDataX = 0; pieceDataX < this.pieceData[0].length; pieceDataX++) {
                 if (this.pieceData[pieceDataY][pieceDataX] !== 0) {
                     this.board[pieceDataY + this.position.y - this.pieceOrigin.y][pieceDataX + this.position.x - this.pieceOrigin.x] = PIECE_VALUE[this.piece];
-                    //this.board[this.position.y][this.position.x] = 8;
                 }
             }
         }
-    }
-
-    // === GAME LOGIC ===
-    update() {
-        //check piece collision
-        /**
-         if (this.board.collide(this.position, this.pieceData, this.pieceOrigin)){
-                //lock delay timer
-                //lockDelayTimer = setTimeout(lockDelayTimer, LOCK_DELAY_TIME);
-                //clearTimeout(lockDelayTimer);
-            }
-         */
-
-        //check if perfect clear
-        this.score += SCORING.PC;
     }
 }

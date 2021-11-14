@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="temporary game architecture">
-      <change afterPath="$PROJECT_DIR$/application/models/Access_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
+    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="opener bag and setup">
+      <change afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/hooks/ValidateSession.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/libraries/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Admin_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Collection_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Leaderboard_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/Profile_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/collection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/collectionIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/collectionMinified.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/requestXHR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/tables.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/acl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/hooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/hooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Leaderboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Leaderboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Login.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/libraries/Userauth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Access_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Access_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/leaderboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/leaderboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/template/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/navigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/board.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/player.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +54,13 @@
   <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,6 +87,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/assignment4" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -73,6 +107,20 @@
       <workItem from="1631148567090" duration="4825000" />
       <workItem from="1631504188191" duration="27217000" />
       <workItem from="1631588439862" duration="50298000" />
+      <workItem from="1632254106596" duration="23000" />
+      <workItem from="1632282134610" duration="1657000" />
+      <workItem from="1632517906887" duration="16878000" />
+      <workItem from="1632544896474" duration="31095000" />
+      <workItem from="1632778105808" duration="739000" />
+      <workItem from="1632778860090" duration="414000" />
+      <workItem from="1632779819431" duration="133000" />
+      <workItem from="1634065718001" duration="19842000" />
+      <workItem from="1634404675855" duration="10871000" />
+      <workItem from="1634596451577" duration="199000" />
+      <workItem from="1634689188163" duration="1657000" />
+      <workItem from="1634694569186" duration="7016000" />
+      <workItem from="1635213796470" duration="109184000" />
+      <workItem from="1635534931918" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1631028471599</created>
@@ -109,7 +157,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="temporary game architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporary game architecture" />
+    <MESSAGE value="basic game working (srs still bugged)" />
+    <MESSAGE value="opener bag and setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="opener bag and setup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

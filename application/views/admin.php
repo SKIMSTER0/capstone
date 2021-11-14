@@ -1,3 +1,15 @@
-<p>stat box 1</p>
-<p>stat box 2</p>
-<p>The admin statistics page will contain graphs that show data such as number of live plays a day, #ratings/favourites a day, among other things.</p>
+<div class='my-3 mx-auto py-3 px-3 text-center bg-secondary'>
+    <h3>Admin Statistics</h3>
+
+    <div class="m-3 mb-5">
+        <h4>Favorited Openers</h4>
+        <div class="statistic" id="chartFavorited"></div>
+    </div>
+
+    <div class="m-3 mb-5">
+        <h4>Live Plays</h4>
+        <div class="statistic mx-auto" id="chartPlayHistory"></div>
+    </div>
+
+</div>
+

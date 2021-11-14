@@ -1,4 +1,4 @@
-//prevent scrolling
+//prevent scrolling via arrow keys
 window.addEventListener("keydown", function(e){
     if(
         [
@@ -11,38 +11,22 @@ window.addEventListener("keydown", function(e){
         e.preventDefault();
     }
 });
+
 window.addEventListener('load', function(){
-    let startTime = 0;
-    const tetris = new Game();
-    window.requestAnimationFrame(run);
+    let tetris = new Game();
+    const board = document.getElementById('board');
+    const helperPCO = document.getElementById('guideButton');
 
-    //game loop
-    function run(currentTime){
-        let elapsed = currentTime - startTime;
-
-        tetris.update(elapsed);
-        tetris.draw();
-
-        window.requestAnimationFrame(run);
-    }
-
-    /**
-     function run(){
-        window.requestAnimationFrame(run);
-
-        let currentTime = Date.now();
-        let elapsed = currentTime - lastTime;
-
-        if (elapsed > 1000 / FPS){
-            lastTime = currentTime - (elapsed % FPS);
-
-            tetris.update(elapsed);
-            tetris.draw();
+    board.addEventListener('click', function(){
+        if (!tetris.gameStart) {
+            tetris.run();
         }
-    }
-     */
+        else if (tetris.gameOver){
+            tetris = new Game();
+        }
+    });
 
-})
-
-
-
+    helperPCO.addEventListener('click', function(){
+        tetris.toggleGuide();
+    });
+});

@@ -1,6 +1,10 @@
 const COLS = 10;
 const ROWS = 20;
+const ROWS_TRUNCATED = 4;
 const BLOCK_SIZE = 20;
+const BLOCK_SIZE_COLLECTION = 30;
+const BLOCK_SIZE_COLLECTION_MINIFIED = 20;
+const BLOCK_SIZE_FORECAST = 15;
 const BOARD_SCALE = {
     x : 1,
     y : 1,
@@ -31,6 +35,36 @@ const PIECE_VALUE = {
     T : 6,
     Z : 7,
     X : 8,
+}
+const PIECES_STRIPPED_DATA= {
+    I : [
+        [1,1,1,1]
+    ],
+    J : [
+        [3,0,0],
+        [3,3,3],
+    ],
+    L : [
+        [0,0,3],
+        [3,3,3],
+    ],
+    O : [
+        [4,4],
+        [4,4],
+    ],
+    S : [
+        [0,5,5],
+        [5,5,0],
+    ],
+    T : [
+        [0,6,0],
+        [6,6,6],
+    ],
+    Z : [
+        [7,7,0],
+        [0,7,7],
+    ],
+
 }
 const PIECES_DATA = {
     I : [
