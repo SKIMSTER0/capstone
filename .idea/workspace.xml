@@ -2,49 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="opener bag and setup">
-      <change afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/hooks/ValidateSession.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/libraries/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Admin_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Collection_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Leaderboard_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/Profile_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/collection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/collectionIndex.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/collectionMinified.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/requestXHR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/tables.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/acl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/hooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/hooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Leaderboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Leaderboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/libraries/Userauth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Access_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Access_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/leaderboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/leaderboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/template/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/template/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/player.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/assignment4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -121,6 +81,9 @@
       <workItem from="1634694569186" duration="7016000" />
       <workItem from="1635213796470" duration="109184000" />
       <workItem from="1635534931918" duration="296000" />
+      <workItem from="1636850297222" duration="673000" />
+      <workItem from="1637016381060" duration="94000" />
+      <workItem from="1637032859477" duration="2742000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1631028471599</created>
@@ -136,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631043221273</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="opener bag and setup">
+      <created>1636861484752</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636861484752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

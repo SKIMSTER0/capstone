@@ -116,12 +116,32 @@ class Access extends CI_Controller {
     }
 
     /**
+     * checks if given password matches one in users table
+     * @return Boolean whether correctly applied form validation rules
+     */
+    public function verifyPassword(){
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        $username = filter_var($username, FILTER_SANITIZE_STRING);
+        $password = filter_var($password, FILTER_SANITIZE_STRING);
+
+        if ($this->access->verifyPassword($username, $password)){
+            return true;
+        } else {
+            $this->form_validation->set_message('verifyPassword', 'Password does not match!');
+            return false;
+        }
+    }
+
+    /**
      * validates login form
      * @return Boolean whether correctly applied form validation rules
      */
     public function validateLoginForm(){
         $this->form_validation->set_rules($this->loginRules);
-        $this->form_validation->set_rules('username', 'username', 'callback_checkMatchingUsername');
+        $this->form_validation->set_rules('username', 'Username', 'callback_checkMatchingUsername');
+        $this->form_validation->set_rules('password', 'Password', 'callback_verifyPassword');
         return $this->form_validation->run();
     }
 
@@ -141,11 +161,18 @@ class Access extends CI_Controller {
                 $this->setUserSession((array)$userSessionData[0]);
 
                 return redirect('/');
+            } else {
+                $this->form_validation->set_message('test', 'Password does not match!');
+                $this->form_validation->run();
+                echo("ASD");
             }
-            ///!!! FIX DOES NOT DETECT WRONG PASSWORD TEXT
         }
 
         $this->loginPage();
+    }
+
+    public function test(){
+        return true;
     }
 
     /**
