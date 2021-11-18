@@ -112,24 +112,25 @@ class Board {
      * checks if current piece position coordinates collides with board state
      * @param position {X,Y}
      * @param pieceData {array}
-     * @param pieceOrigin {X,Y}
      * @returns {boolean} whether piece collided with board on movement
      */
-    collide(position, pieceData, pieceOrigin){
+    collide(position, pieceData){
         console.log("COLLISION CHECK");
         console.log(position);
+
+        //loop through piece data and see if collides with environment
         for (let pieceDataY = 0; pieceDataY < pieceData.length; pieceDataY++){
-            let newPositionY = pieceDataY + position.y - pieceOrigin.y;
+            let newPositionY = pieceDataY + position.y;
             let boardRow = this.board[newPositionY];
 
             for (let pieceDataX = 0; pieceDataX < pieceData[0].length; pieceDataX++){
                 let pieceBlock = pieceData[pieceDataY][pieceDataX];
-                let newPositionX = pieceDataX + position.x - pieceOrigin.x;
+                let newPositionX = pieceDataX + position.x;
 
                 if (pieceBlock === 0) continue;
 
                 //check bounds and collision
-                if (newPositionX > this.cols || newPositionX < 0 ||
+                if (newPositionX >= this.cols || newPositionX < 0 ||
                     newPositionY >= this.rows || newPositionY < 0){
                     console.log("OUT OF BOUNDS");
                     return true;

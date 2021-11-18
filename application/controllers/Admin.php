@@ -26,6 +26,33 @@ class Admin extends CI_Controller {
 
     /**
      * xhr get request endpoint
+     * request data all users
+     */
+    public function getUsers(){
+        try {
+            echo json_encode($this->admin->getUsers());
+        } catch (Exception $e) {
+            show_error('Could not retrieve user data', 400);
+        }
+    }
+
+    /**
+     * xhr get request endpoint
+     * delete all data of single user (users, leaderboards, etc)
+     */
+    public function deleteUser($userId){
+        try {
+            $this->admin->deleteUser($userId);
+            return redirect('/admin');
+
+            echo $userId;
+        } catch (Exception $e) {
+            show_error('Could not delete specified user '+$userId, 400);
+        }
+    }
+
+    /**
+     * xhr get request endpoint
      * request data for page favorited statistic
      */
     public function getFavoritedCount(){

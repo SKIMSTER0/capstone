@@ -29,7 +29,6 @@ class Game {
             this.forecastContext = this.forecastList[i].getContext('2d');
             this.forecastContext.canvas.width = 5 * BLOCK_SIZE_FORECAST;
             this.forecastContext.canvas.height = 5 * BLOCK_SIZE_FORECAST;
-            //this.forecastContext.fillRect(0,0, this.forecastContext.canvas.width, this.forecastContext.canvas.height);
         }
 
         // === game config ===
@@ -82,7 +81,7 @@ class Game {
 
         //start time and gravity timers
         this.timer.start(this);
-        this.gravity.start(this);
+        //this.gravity.start(this);
 
         // === keyboard event listeners ===
         const INPUT_KEYS_LISTENERS = event => {
@@ -105,9 +104,6 @@ class Game {
                 case KEY_SETTINGS.hardDrop:
                     this.player.hardDrop();
                     break;
-                case KEY_SETTINGS.hold:
-                    this.player.hold();
-                    break;
             }
             this.update();
         }
@@ -116,6 +112,9 @@ class Game {
         this.update();
     }
 
+    /**
+     * primary game loop, always update until game over
+     */
     update(){
         if (!this.gameOver) {
             this.updateGameinfo()
@@ -198,6 +197,7 @@ class Game {
         xhr.send(gameData);
     }
 
+    //toggles guide lines onto board
     toggleGuide(){
         this.guidePCO = !this.guidePCO;
         this.update();

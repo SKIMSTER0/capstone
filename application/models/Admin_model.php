@@ -10,6 +10,38 @@ class admin_model extends ci_model
     }
 
     /**
+     * remove user and all of their associated scores
+     * @param $userId id of user
+     */
+    public function deleteUser($userId){
+        try {
+            $tables = array('users', 'ratings', 'leaderboard');
+            $this->db->where('user_id', $userId);
+            $this->db->delete($tables);
+
+        } catch (PDOexception $e) {
+            log_message('error', $e->errorInfo);
+        }
+    }
+
+    /**
+     * retrieve all users data
+     */
+    public function getUsers(){
+        try {
+            $query = $this->db->query('
+                SELECT users.user_id as "userId", users.username as "username", users.access_level as "accessLevel"
+                FROM users
+                WHERE users.access_level NOT LIKE \'admin\'
+            ');
+
+            return $query->result_array();
+        } catch (PDOexception $e) {
+            log_message('error', $e->errorInfo);
+        }
+    }
+
+    /**
      * retrieve data neccessary to create statistic counting all favorited openers
      * @return array opener id, pieces and their favorited count
      */

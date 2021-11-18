@@ -2,12 +2,12 @@
     <h3>Admin Statistics</h3>
 
     <div class="m-3 mb-5">
-        <h4>Openers</h4>
+        <h4>Users</h4>
         <table id="users" class="table cell-border compact stripe order-column">
             <thead>
                 <tr>
-                    <th>Opener</th>
-                    <th>Data</th>
+                    <th>Username</th>
+                    <th>Access Level</th>
                     <th>Delete</th>
                 </tr>
             </thead>

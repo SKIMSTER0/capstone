@@ -1,6 +1,8 @@
 window.addEventListener('load', function(){
     //load google statistics chart generator api
     google.charts.load('current', {packages: ['corechart, table, bar, calendar'], 'callback': drawCharts});
+
+
 });
 
 /**
@@ -9,6 +11,30 @@ window.addEventListener('load', function(){
 function drawCharts(){
     drawFavorited();
     drawPlayHistory();
+    renderUsersTable();
+}
+
+function renderUsersTable(){
+    makeXHRRequest("GET", '/capstone/admin/getUsers')
+        .then(function(e){
+            let usersData = JSON.parse(e.target.response);
+
+            let usersTable = $("#users tbody");
+
+            console.log(usersData);
+            for (var user of usersData){
+                let rowHTML =
+                    "<tr>" +
+                        "<td>" + user["username"] + "</td>" +
+                        "<td>" + user["accessLevel"] + "</td>" +
+                        "<td><a href=/capstone/admin/deleteUser/" + user["userId"] +">&#128465;</a><td>" +
+                    "</tr>";
+                usersTable.after(rowHTML);
+            }
+
+        }, function(e){
+            console.log("get users request failed");
+        });
 }
 
 /**

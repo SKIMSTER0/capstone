@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="opener bag and setup">
+    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="fixed login not detecting wrong password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Admin_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admin_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Leaderboard_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Leaderboard_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Profile_model.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/player.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +98,8 @@
       <workItem from="1635534931918" duration="296000" />
       <workItem from="1636850297222" duration="673000" />
       <workItem from="1637016381060" duration="94000" />
-      <workItem from="1637032859477" duration="2742000" />
+      <workItem from="1637032859477" duration="7698000" />
+      <workItem from="1637227822616" duration="15499000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1631028471599</created>
@@ -106,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636861484752</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed login not detecting wrong password">
+      <created>1637035768041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637035768041</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +152,8 @@
     <MESSAGE value="temporary game architecture" />
     <MESSAGE value="basic game working (srs still bugged)" />
     <MESSAGE value="opener bag and setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="opener bag and setup" />
+    <MESSAGE value="fixed login not detecting wrong password" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed login not detecting wrong password" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

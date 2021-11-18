@@ -13,16 +13,18 @@ window.addEventListener("keydown", function(e){
 });
 
 window.addEventListener('load', function(){
-    let tetris = new Game();
+    var tetris = new Game();
     const board = document.getElementById('board');
     const helperPCO = document.getElementById('guideButton');
 
+    //only start new tetris game when board is clicked
     board.addEventListener('click', function(){
-        if (!tetris.gameStart) {
-            tetris.run();
-        }
-        else if (tetris.gameOver){
+        if (tetris.gameOver){
             tetris = new Game();
+            console.log("GAME END");
+        }
+        else if(!tetris.gameStart) {
+            tetris.run();
         }
     });
 

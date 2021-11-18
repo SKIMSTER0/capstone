@@ -164,7 +164,6 @@ class Access extends CI_Controller {
             } else {
                 $this->form_validation->set_message('test', 'Password does not match!');
                 $this->form_validation->run();
-                echo("ASD");
             }
         }
 

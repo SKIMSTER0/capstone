@@ -10,7 +10,6 @@ class Collection extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('collection_model', 'collection');
-        $this->load->model('profile_model', 'profile');
 
         $this->TPL['title'] = 'PCO Collection';
         $this->TPL['userId'] = $_SESSION['userId'];
