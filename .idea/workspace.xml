@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="database config">
+    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="final bugfixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Access_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Access_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Leaderboard_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Leaderboard_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/leaderboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/leaderboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/tables.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/tables.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +87,8 @@
       <workItem from="1636850297222" duration="673000" />
       <workItem from="1637016381060" duration="94000" />
       <workItem from="1637032859477" duration="7698000" />
-      <workItem from="1637227822616" duration="23025000" />
+      <workItem from="1637227822616" duration="23179000" />
+      <workItem from="1637283345367" duration="263000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1631028471599</created>
@@ -128,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637246402139</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="final bugfixes">
+      <created>1637281908740</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637281908740</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +157,8 @@
     <MESSAGE value="opener bag and setup" />
     <MESSAGE value="fixed login not detecting wrong password" />
     <MESSAGE value="database config" />
-    <option name="LAST_COMMIT_MESSAGE" value="database config" />
+    <MESSAGE value="final bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="final bugfixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

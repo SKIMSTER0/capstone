@@ -30,7 +30,7 @@ class leaderboard_model extends ci_model
      */
     public function getLeaderboardUser(int $userId){
         try {
-            $this->db->select('users.username, leaderboard.pco_count, leaderboard.score')
+            $this->db->select('users.username, leaderboard.pco_count, leaderboard.score, leaderboard.game_time, leaderboard.date_submitted')
                 ->from('leaderboard')
                 ->join('users', 'users.user_id = leaderboard.user_id');
 

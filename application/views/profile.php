@@ -49,6 +49,8 @@
                 <th>Player</th>
                 <th>PCO Count</th>
                 <th>Score</th>
+                <th>Game Time</th>
+                <th>Date Submitted</th>
             </tr>
             </thead>
         </table>

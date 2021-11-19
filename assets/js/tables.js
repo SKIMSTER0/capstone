@@ -12,6 +12,8 @@ window.addEventListener('load', function(){
                     {data: "username"},
                     {data: "pco_count"},
                     {data: "score"},
+                    {data: "game_time"},
+                    {data: "date_submitted"},
                 ]
             });
 
