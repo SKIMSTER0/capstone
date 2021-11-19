@@ -454,8 +454,15 @@ $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array(
-    '/home/submitLeaderboard/'
-
+    'home/submitLeaderboard',
+    'collection/submitRating',
+    'collection/getOpeners',
+    'collection/getRatings',
+    'leaderboard/getLeaderboardUser/[0-9]+',
+    'admin/deleteUser/[0-9]+',
+    'admin/getFavoritedCount',
+    'admin/getPlayHistory',
+    'admin/getUsers',
 );
 
 /*

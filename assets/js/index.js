@@ -21,7 +21,6 @@ window.addEventListener('load', function(){
     board.addEventListener('click', function(){
         if (tetris.gameOver){
             tetris = new Game();
-            console.log("GAME END");
         }
         else if(!tetris.gameStart) {
             tetris.run();

@@ -35,6 +35,8 @@ class Access_model extends CI_Model {
             $this->db->select('password_hash')->where('username', $username);
             $query = $this->db->get('users');
 
+            if (count($query->result()) <= 0) return false;
+
             $passwordHash = $query->result()[0]->password_hash;
 
             return (password_verify($password, $passwordHash));

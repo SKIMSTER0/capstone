@@ -115,9 +115,6 @@ class Board {
      * @returns {boolean} whether piece collided with board on movement
      */
     collide(position, pieceData){
-        console.log("COLLISION CHECK");
-        console.log(position);
-
         //loop through piece data and see if collides with environment
         for (let pieceDataY = 0; pieceDataY < pieceData.length; pieceDataY++){
             let newPositionY = pieceDataY + position.y;
@@ -132,13 +129,11 @@ class Board {
                 //check bounds and collision
                 if (newPositionX >= this.cols || newPositionX < 0 ||
                     newPositionY >= this.rows || newPositionY < 0){
-                    console.log("OUT OF BOUNDS");
                     return true;
                 }
                 let boardBlock = boardRow[newPositionX];
 
                 if (pieceBlock !== 0 && boardBlock !== 0) {
-                    console.log("COLLISION");
                     return true;
                 }
             }

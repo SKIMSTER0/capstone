@@ -48,8 +48,6 @@ class Player {
             this.position.y += direction.y;
             this.drawPiece();
 
-            console.log("POSITION");
-            console.log(this.position);
             return true;
         }
         this.drawPiece();
@@ -61,20 +59,18 @@ class Player {
     rotate(rotation) {
         this.refreshPlayer();
 
-        if (!this.checkRotate(rotation)){
+        if (this.checkRotate(rotation)){
             this.setRotation(rotation)
-            console.log("NOCOLLISION-ROTATION");
-        } else {
-            this.checkRotate(-rotation);
-            console.log("COLLISION-ROTATION");
+            this.pieceData = this.checkRotate(rotation);
         }
         this.drawPiece();
-        console.log("ROATATION:", this.rotation);
     }
 
     //attempts to rotate piece data and returns rotated piece data
     checkRotate(rotation){
-        let attemptRotateData = this.pieceData;
+        let attemptRotateData = this.pieceData.map(function(array) {
+            return array.slice();
+        });
 
         //flip matrix on diagonal axis
         for (let col = 0; col < attemptRotateData.length; col++) {
@@ -94,7 +90,10 @@ class Player {
                 break;
         }
 
-        return (this.game.collide(this.position, attemptRotateData));
+        if (!this.game.collide(this.position, attemptRotateData)){
+            return attemptRotateData;
+        }
+        return false;
     }
 
     //drops piece down a single square
@@ -121,8 +120,7 @@ class Player {
 
     //choose a random PCO from the PCO database, add to forecast
     generateBag() {
-            //let randNum = Math.floor(Math.random() * (openers.length));
-            let randNum = 5;
+            let randNum = Math.floor(Math.random() * (openers.length));
             let piecesPCO = openers[randNum]["pieces"];
             let openerData = openers[randNum]["opener_data"];
 
@@ -139,8 +137,9 @@ class Player {
         this.forecast = this.forecast.substring(1, this.forecast.length);
 
         //generate next piece data
-        console.log(PIECES_DATA)
-        this.pieceData = PIECES_DATA[this.piece];
+        this.pieceData= PIECES_DATA[this.piece].map(function(array) {
+            return array.slice();
+        });
 
         //determine position of spawn piece
         this.position = {
@@ -164,7 +163,7 @@ class Player {
             //check if PCO clear
             if (lineClears > 0) {
                 //set next PCO helper guidelines
-                this.pcoHelper.pop();
+                this.pcoHelper.shift();
                 this.game.setOpener(this.pcoHelper[0].piecesPCO, this.pcoHelper[0].openerData);
             }
         }

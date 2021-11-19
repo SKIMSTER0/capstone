@@ -28,6 +28,10 @@ class Home extends CI_Controller {
      */
     public function submitLeaderboard(){
         try {
+            if (!isset($_SESSION['userId'])) {
+                return;
+            }
+
             $gameData = json_decode(file_get_contents('php://input'), true);
             $gameData = $this->security->xss_clean($gameData);
 

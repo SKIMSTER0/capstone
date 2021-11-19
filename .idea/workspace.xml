@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="fixed login not detecting wrong password">
+    <list default="true" id="655c8efb-06f3-4bf6-ae7c-1f1859440134" name="Changes" comment="database config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Access.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Access.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Admin_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Admin_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Leaderboard_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Leaderboard_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Profile_model.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Access_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Access_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/board.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/player.js" afterDir="false" />
@@ -99,7 +91,7 @@
       <workItem from="1636850297222" duration="673000" />
       <workItem from="1637016381060" duration="94000" />
       <workItem from="1637032859477" duration="7698000" />
-      <workItem from="1637227822616" duration="15499000" />
+      <workItem from="1637227822616" duration="23025000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1631028471599</created>
@@ -129,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637035768041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="database config">
+      <created>1637246402139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637246402139</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +152,8 @@
     <MESSAGE value="basic game working (srs still bugged)" />
     <MESSAGE value="opener bag and setup" />
     <MESSAGE value="fixed login not detecting wrong password" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed login not detecting wrong password" />
+    <MESSAGE value="database config" />
+    <option name="LAST_COMMIT_MESSAGE" value="database config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

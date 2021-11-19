@@ -81,7 +81,7 @@ class Game {
 
         //start time and gravity timers
         this.timer.start(this);
-        //this.gravity.start(this);
+        this.gravity.start(this);
 
         // === keyboard event listeners ===
         const INPUT_KEYS_LISTENERS = event => {
@@ -199,7 +199,9 @@ class Game {
 
     //toggles guide lines onto board
     toggleGuide(){
-        this.guidePCO = !this.guidePCO;
-        this.update();
+        if (typeof this.player !== 'undefined'){
+            this.guidePCO = !this.guidePCO;
+            this.update();
+        }
     }
 }

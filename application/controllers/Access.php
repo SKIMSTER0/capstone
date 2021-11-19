@@ -19,14 +19,14 @@ class Access extends CI_Controller {
         $this->loginRules = array(
             array(
                 'field' => 'username',
-                'label' => 'username',
+                'label' => 'Username',
                 'rules' => 'required|min_length[2]|max_length[20]',
                 'errors' => array(
                 )
             ),
             array(
                 'field' => 'password',
-                'label' => 'password',
+                'label' => 'Password',
                 'rules' => 'required|min_length[5]|max_length[20]',
                 'errors' => array(
                 )
@@ -36,21 +36,21 @@ class Access extends CI_Controller {
         $this->registerRules = array(
             array(
                 'field' => 'username',
-                'label' => 'username',
+                'label' => 'Username',
                 'rules' => 'required|min_length[2]|max_length[20]',
                 'errors' => array(
                 )
             ),
             array(
                 'field' => 'password',
-                'label' => 'password',
+                'label' => 'Password',
                 'rules' => 'required|min_length[5]|max_length[20]',
                 'errors' => array(
                 )
             ),
             array(
                 'field' => 'passwordConfirm',
-                'label' => 'passwordConfirm',
+                'label' => 'Confirm Password',
                 'rules' => 'required|matches[password]',
                 'errors' => array(
                     'matches' => 'Passwords do not match.'
@@ -68,6 +68,7 @@ class Access extends CI_Controller {
      * display login page
      */
     public function loginPage(){
+        $this->TPL['title'] = 'Login';
         $this->template->show('login', $this->TPL);
     }
 
@@ -75,6 +76,7 @@ class Access extends CI_Controller {
      * display register page
      */
     function registerPage(){
+        $this->TPL['title'] = 'Register';
         $this->template->show('register', $this->TPL);
     }
 
